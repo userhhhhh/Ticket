@@ -1,8 +1,8 @@
 #ifndef TICKET_USERSYSTEM_H
 #define TICKET_USERSYSTEM_H
 
-#include "/home/hqs123/class_code/Ticket/B_plus_tree/BPlusTree.h"
-#include "/home/hqs123/class_code/Ticket/B_plus_tree/BPlusTree.cpp"
+#include "BPlusTree.h"
+#include "BPlusTree.cpp"
 #include <algorithm>
 #include <cstring>
 #include <iostream>

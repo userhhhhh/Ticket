@@ -8,25 +8,26 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/hqs123/class_code/Ticket/cmake-build-debug"/>
+				<Option working_dir="/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Ticket">
-				<Option output="/home/hqs123/class_code/Ticket/cmake-build-debug/Ticket" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/hqs123/class_code/Ticket/cmake-build-debug"/>
+				<Option output="/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Ticket" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/hqs123/class_code/Ticket/."/>
-					<Add directory="/home/hqs123/class_code/Ticket/B_plus_tree"/>
-					<Add directory="/home/hqs123/class_code/Ticket/other"/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/."/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree"/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/other"/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/map"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -36,22 +37,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ticket"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ticket"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Ticket/fast">
-				<Option output="/home/hqs123/class_code/Ticket/cmake-build-debug/Ticket" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/hqs123/class_code/Ticket/cmake-build-debug"/>
+				<Option output="/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Ticket" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/hqs123/class_code/Ticket/."/>
-					<Add directory="/home/hqs123/class_code/Ticket/B_plus_tree"/>
-					<Add directory="/home/hqs123/class_code/Ticket/other"/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/."/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree"/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/other"/>
+					<Add directory="/home/hqs123/class_code/tmp-hw/Ticket/map"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -61,58 +63,58 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ticket/fast"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ticket/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/hqs123/class_code/Ticket/cmake-build-debug"/>
+				<Option working_dir="/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/hqs123/class_code/Ticket/cmake-build-debug"/>
+				<Option working_dir="/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/hqs123/class_code/Ticket/B_plus_tree/BPlusTree.cpp">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree/BPlusTree.cpp">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/B_plus_tree/BPlusTree.h">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree/BPlusTree.h">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/map/exceptions.hpp">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/map/exceptions.hpp">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/map/map.hpp">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/map/map.hpp">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/map/utility.hpp">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/map/utility.hpp">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/other/command.hpp">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/other/command.hpp">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/other/main.cpp">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/other/main.cpp">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/other/usersystem.h">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/other/usersystem.h">
 			<Option target="Ticket"/>
 		</Unit>
-		<Unit filename="/home/hqs123/class_code/Ticket/CMakeLists.txt">
+		<Unit filename="/home/hqs123/class_code/tmp-hw/Ticket/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

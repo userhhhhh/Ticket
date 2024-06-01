@@ -4,9 +4,9 @@
 #include "trainsystem.cpp"
 #include "ticketsystem.h"
 #include "usersystem.h"
-#include "/home/hqs123/class_code/Ticket/map/map.hpp"
-#include "/home/hqs123/class_code/Ticket/map/utility.hpp"
-#include "/home/hqs123/class_code/Ticket/map/exceptions.hpp"
+#include "map.hpp"
+#include "utility.hpp"
+#include "exceptions.hpp"
 // #include "command.hpp"
 
 class Compare {

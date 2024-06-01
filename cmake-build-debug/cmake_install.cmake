@@ -1,4 +1,4 @@
-# Install script for directory: /home/hqs123/class_code/Ticket
+# Install script for directory: /home/hqs123/class_code/tmp-hw/Ticket
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/hqs123/class_code/Ticket/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/hqs123/class_code/tmp-hw/Ticket/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

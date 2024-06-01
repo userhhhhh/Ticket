@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/hqs123/class_code/Ticket/. -I/home/hqs123/class_code/Ticket/B_plus_tree -I/home/hqs123/class_code/Ticket/other
+CXX_INCLUDES = -I/home/hqs123/class_code/tmp-hw/Ticket/. -I/home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree -I/home/hqs123/class_code/tmp-hw/Ticket/other -I/home/hqs123/class_code/tmp-hw/Ticket/map
 
 CXX_FLAGS = -g -std=gnu++14
 

@@ -1,7 +1,8 @@
 CMakeFiles/Ticket.dir/other/main.cpp.o: \
- /home/hqs123/class_code/Ticket/other/main.cpp /usr/include/stdc-predef.h \
- /home/hqs123/class_code/Ticket/other/ticketsystem.h \
- /home/hqs123/class_code/Ticket/other/trainsystem.h \
+ /home/hqs123/class_code/tmp-hw/Ticket/other/main.cpp \
+ /usr/include/stdc-predef.h \
+ /home/hqs123/class_code/tmp-hw/Ticket/other/ticketsystem.h \
+ /home/hqs123/class_code/tmp-hw/Ticket/other/trainsystem.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -300,15 +301,15 @@ CMakeFiles/Ticket.dir/other/main.cpp.o: \
  /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
  /usr/include/c++/11/shared_mutex \
- /home/hqs123/class_code/Ticket/other/usersystem.h \
- /home/hqs123/class_code/Ticket/B_plus_tree/BPlusTree.h \
- /home/hqs123/class_code/Ticket/B_plus_tree/BPlusTree.cpp \
- /home/hqs123/class_code/Ticket/B_plus_tree/BPlusTree.h \
- /home/hqs123/class_code/Ticket/other/command.hpp \
- /home/hqs123/class_code/Ticket/other/ticketsystem.cpp \
- /home/hqs123/class_code/Ticket/other/trainsystem.cpp \
- /home/hqs123/class_code/Ticket/map/map.hpp \
- /home/hqs123/class_code/Ticket/map/utility.hpp \
- /home/hqs123/class_code/Ticket/map/exceptions.hpp \
- /home/hqs123/class_code/Ticket/map/utility.hpp \
- /home/hqs123/class_code/Ticket/map/exceptions.hpp
+ /home/hqs123/class_code/tmp-hw/Ticket/other/usersystem.h \
+ /home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree/BPlusTree.h \
+ /home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree/BPlusTree.cpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/B_plus_tree/BPlusTree.h \
+ /home/hqs123/class_code/tmp-hw/Ticket/other/command.hpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/other/ticketsystem.cpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/other/trainsystem.cpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/map/map.hpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/map/utility.hpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/map/exceptions.hpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/map/utility.hpp \
+ /home/hqs123/class_code/tmp-hw/Ticket/map/exceptions.hpp
