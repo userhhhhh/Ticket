@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Ticket.dir/B_plus_tree/BPlusTree.cpp.o CMakeFiles/Ticket.dir/other/main.cpp.o -o Ticket 
