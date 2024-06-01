@@ -64,20 +64,21 @@ int main(){
         if(str == "exit " || str == "exit"){
             std::cout << "[" << time_stamp << "]" << " ";
             std::cout << "bye" << std::endl;
-            if(system.usersystem.user_map.Nfile.is_open()) system.usersystem.user_map.Nfile.close();
-            if(system.usersystem.user_map.Ifile.is_open()) system.usersystem.user_map.Ifile.close();
-            if(system.trainsystem.train_map.Nfile.is_open()) system.trainsystem.train_map.Nfile.close();
-            if(system.trainsystem.train_map.Ifile.is_open()) system.trainsystem.train_map.Ifile.close();
-            if(system.trainsystem.station_train_map.Nfile.is_open()) system.trainsystem.station_train_map.Nfile.close();
-            if(system.trainsystem.station_train_map.Ifile.is_open()) system.trainsystem.station_train_map.Ifile.close();
-            if(system.trainsystem.seat_file.is_open()) system.trainsystem.seat_file.close();
-            if(system.trainsystem.train_data_file.is_open()) system.trainsystem.train_data_file.close();
-            if(system.trainsystem.tail_file.is_open()) system.trainsystem.tail_file.close();
-            if(system.order_map.Nfile.is_open()) system.order_map.Nfile.close();
-            if(system.order_map.Ifile.is_open()) system.order_map.Ifile.close();
-            if(system.waitlist_map.Nfile.is_open()) system.waitlist_map.Nfile.close();
-            if(system.waitlist_map.Ifile.is_open()) system.waitlist_map.Ifile.close();
-            exit(0);
+            // if(system.usersystem.user_map.Nfile.is_open()) system.usersystem.user_map.Nfile.close();
+            // if(system.usersystem.user_map.Ifile.is_open()) system.usersystem.user_map.Ifile.close();
+            // if(system.trainsystem.train_map.Nfile.is_open()) system.trainsystem.train_map.Nfile.close();
+            // if(system.trainsystem.train_map.Ifile.is_open()) system.trainsystem.train_map.Ifile.close();
+            // if(system.trainsystem.station_train_map.Nfile.is_open()) system.trainsystem.station_train_map.Nfile.close();
+            // if(system.trainsystem.station_train_map.Ifile.is_open()) system.trainsystem.station_train_map.Ifile.close();
+            // if(system.trainsystem.seat_file.is_open()) system.trainsystem.seat_file.close();
+            // if(system.trainsystem.train_data_file.is_open()) system.trainsystem.train_data_file.close();
+            // if(system.trainsystem.tail_file.is_open()) system.trainsystem.tail_file.close();
+            // if(system.order_map.Nfile.is_open()) system.order_map.Nfile.close();
+            // if(system.order_map.Ifile.is_open()) system.order_map.Ifile.close();
+            // if(system.waitlist_map.Nfile.is_open()) system.waitlist_map.Nfile.close();
+            // if(system.waitlist_map.Ifile.is_open()) system.waitlist_map.Ifile.close();
+            // exit(0);
+		return 0;
         }
         else{
             std::vector<std::string> ans = command.GetTokens(cmd, ' ');
