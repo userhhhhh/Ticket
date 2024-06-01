@@ -62,6 +62,18 @@ Trainsystem::Trainsystem(std::string str1, std::string str2, std::string str3, s
         tail_file.read(reinterpret_cast<char*>(&train_data_tail), sizeof(int));
     }
 }
+Trainsystem::~Trainsystem(){
+    if(seat_file.is_open()) seat_file.close();
+    if(train_data_file.is_open()) train_data_file.close();
+    if (tail_file.is_open()){
+        tail_file.close();
+        tail_file.open("tail.txt", std::ios::out | std::ios::trunc);
+        tail_file.seekp(0);
+        tail_file.write(reinterpret_cast<char*>(&seat_tail), sizeof(int));
+        tail_file.write(reinterpret_cast<char*>(&train_data_tail), sizeof(int));
+        tail_file.close();
+    }
+}
 
 void Trainsystem::write_train_data(train_data & data_in, int pos){
     train_data_file.seekp(pos);
