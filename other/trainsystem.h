@@ -244,6 +244,7 @@ public:
     std::pair<bool, std::pair<Ticket, Ticket>> query_transfer(std::string & s, std::string & t, std::string & d, int order);
     void print_train(std::pair<std::pair<int, TrainInfor>, train_data> & train_in, int d);
     void print_ticket(const Ticket & s);
+    ~Trainsystem();
 };
 
 #endif //TICKET_TRAINSYSTEM_H
