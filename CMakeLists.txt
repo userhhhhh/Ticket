@@ -10,7 +10,7 @@ include_directories(map)
 
 #set(CMAKE_RUNTIME_OUTPUTDIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-add_executable(Ticket
+add_executable(code
         B_plus_tree/BPlusTree.cpp
         B_plus_tree/BPlusTree.h
         other/usersystem.h
