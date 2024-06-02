@@ -39,6 +39,10 @@ BPlusTree<keytype, valuetype>::BPlusTree(std::string name1, std::string name2){
 
 template<typename keytype, typename valuetype>
 BPlusTree<keytype, valuetype>::~BPlusTree(){
+    for(auto it = mycache.mylist.begin(); it != mycache.mylist.end(); ++it){
+         Nfile.seekp((*it).pos);
+         Nfile.write(reinterpret_cast<char*>(&(*it)), sizeof((*it)));
+    }
     if (Nfile.is_open()) Nfile.close();
     if (Ifile.is_open()){
         Ifile.close();
