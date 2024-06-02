@@ -460,7 +460,7 @@ std::pair<bool, std::pair<Ticket, Ticket>> Trainsystem::check(int date_in1, int 
                 int target_date;     //第二辆车的发车日期
                 time_data mid_arrive_time = train_data_leave.arrive_time[i] + train_leave_infor.startTime;   //到达中转，指定了天数和时间
                 time_data mid_leave_time = train_data_arrive.leave_time[j] + train_arrive_infor.startTime;   //离开中转，没有指定哪一天，但可以得出相对天数和时间
-                time_data target_arrive_time = train_data_arrive.arrive_time[arrive_index] + train_arrive_infor.startTime;   //到达目的地的相对天数和时间
+                // time_data target_arrive_time = train_data_arrive.arrive_time[arrive_index] + train_arrive_infor.startTime;   //到达目的地的相对天数和时间
                 if(mid_arrive_time.time <= mid_leave_time.time){
                     target_date_min = date_in1 + mid_arrive_time.date - mid_leave_time.date;
                 }

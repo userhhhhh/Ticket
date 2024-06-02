@@ -38,12 +38,12 @@ void hhh(){
     ofs.close();
 }
 int main(){
-    // freopen("/home/hqs123/class_code/Ticket/data/23.in","r",stdin);
-    // freopen("0.out","w",stdout);
+//     freopen("/home/hqs123/class_code/tmp-hw/data/43.in","r",stdin);
+//     freopen("0.out","w",stdout);
     std::ios::sync_with_stdio(false);
     // Usersystem usersystem("data.txt", "infor.txt");
 
-    // hhh();
+//     hhh();
     ticketsystem system("data.txt", "infor.txt", "train.txt", "traininfor.txt", "station.txt", "anothertrain.txt", "orderindex.txt", "order.txt", "waitindex.txt", "wait.txt");
     std::string cmd;
     sjtu::map<std::string, bool, Compare> mymap;
@@ -56,9 +56,9 @@ int main(){
             time_stamp += cmd[i];
             ++i;
         }
-            // if(time_stamp == "7061"){
-            //     std::cout << "hhhhh" <<std::endl;
-            // }
+//             if(time_stamp == "6459"){
+//                 std::cout << "hhhhh" <<std::endl;
+//             }
         i += 2;
         std::string str = cmd.substr(i, 5);
         if(str == "exit " || str == "exit"){
@@ -78,7 +78,7 @@ int main(){
             // if(system.waitlist_map.Nfile.is_open()) system.waitlist_map.Nfile.close();
             // if(system.waitlist_map.Ifile.is_open()) system.waitlist_map.Ifile.close();
             // exit(0);
-		return 0;
+		    return 0;
         }
         else{
             std::vector<std::string> ans = command.GetTokens(cmd, ' ');

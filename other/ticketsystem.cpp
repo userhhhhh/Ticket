@@ -24,7 +24,7 @@ int ticketsystem::buy_ticket(std::string &u, std::string &i, std::string &d, int
     train_data train_data_in;
     trainsystem.read_train_data(train_data_in, train_find.data_pos);
     int leave_index = -1, arrive_index = -1;
-    for(int i = 0; i < train_find.seatNum; ++i){
+    for(int i = 0; i < train_find.stationNum; ++i){
         if(train_data_in.stations[i] == my_f){
             leave_index = i;
         }
@@ -73,6 +73,7 @@ int ticketsystem::buy_ticket(std::string &u, std::string &i, std::string &d, int
             wait_data.num = n;
             wait_data.username = mystring_u;
             wait_data.time_stamp = time_in;
+            wait_data.date = date;
             Node<mystring, Waitlist> node(mystring_i, wait_data);
             waitlist_map.Insert(node);
         }
@@ -109,6 +110,30 @@ std::pair<bool, std::vector<Order>> ticketsystem::query_order(const std::string 
     return {true, ans};
 }
 
+void ticketsystem::judge_compensate(Waitlist & wait, seat_data & seat_in, mystring& trainID_in){
+    for(int i = wait.leave_index; i <= wait.arrive_index - 1; ++i){
+        if(wait.num > seat_in.seat_num[i]) return;
+    }
+    for(int i = wait.leave_index; i <= wait.arrive_index - 1; ++i){
+        seat_in.seat_num[i] -= wait.num;
+    }
+    Node<mystring, Waitlist> node(trainID_in, wait);
+    waitlist_map.Remove(node);
+    auto tmp_vector = order_map.final_find(wait.username);
+    Order origin_order;
+    for(int i = 0; i < tmp_vector.size(); ++i){
+        if(tmp_vector[i].time_stamp == wait.time_stamp){
+            origin_order = tmp_vector[i];
+            break;
+        }
+    }
+    Order tran_order = origin_order;
+    tran_order.status = 1;
+    Node<mystring, Order> origin_node(wait.username, origin_order);
+    Node<mystring, Order> tran_node(wait.username, tran_order);
+    order_map.modify(origin_node, tran_node);
+}
+
 bool ticketsystem::refund_ticket(std::string & u, int n){
     mystring my_u(u);
     if(!usersystem.checkuser(my_u)) return false;
@@ -124,6 +149,7 @@ bool ticketsystem::refund_ticket(std::string & u, int n){
     if(order.status == 2){
         Waitlist tmp;
         tmp.time_stamp = order.time_stamp;
+        tmp.username = my_u;
         Node<mystring, Waitlist> node(order.trainID, tmp);
         waitlist_map.Remove(node);
         Node<mystring, Order> origin_node(my_u, order);
@@ -132,21 +158,27 @@ bool ticketsystem::refund_ticket(std::string & u, int n){
         order_map.modify(origin_node, tran_node);
         return true;
     }
-    TrainInfor tmp;
+//    TrainInfor tmp;
     auto ans1 = trainsystem.train_map.final_find(order.trainID);
     seat_data seat_in;
     trainsystem.read_seat_data(seat_in, ans1[0].seat_pos, order.date);
     for(int i = order.leave_index; i <= order.arrive_index - 1; ++i){
         seat_in.seat_num[i] += order.num;
     }
-    trainsystem.write_seat_data(seat_in, ans1[0].seat_pos, order.date);
 
     Node<mystring, Order> origin_node(my_u, order);
     order.status = 3;
     Node<mystring, Order> tran_node(my_u, order);
     order_map.modify(origin_node, tran_node);
 
-    auto hh = order_map.final_find(my_u);
-
+    auto waiting_list = waitlist_map.final_find(order.trainID);
+    std::sort(waiting_list.begin(), waiting_list.end(), [](const Waitlist & w1, const Waitlist & w2){
+        return w1.time_stamp < w2.time_stamp;
+    });
+    for(int i = 0; i < waiting_list.size(); ++i){
+        if(waiting_list[i].date != order.date) continue;
+        judge_compensate(waiting_list[i], seat_in, order.trainID);
+    }
+    trainsystem.write_seat_data(seat_in, ans1[0].seat_pos, order.date);
     return true;
 }

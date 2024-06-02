@@ -115,6 +115,12 @@ public:
             ans += val / 10 + '0';
             ans += val % 10 + '0';
         }
+        else if(a >= 93 && a <= 100){
+            ans += "09-";
+            int val = a - 92;
+            ans += val / 10 + '0';
+            ans += val % 10 + '0';
+        }
         return ans;
     }
 };

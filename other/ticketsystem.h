@@ -46,7 +46,7 @@ public:
         else return (time_stamp < other.time_stamp);
     }
     bool operator == (const Order & other) const {
-        return (trainID == other.trainID && time_stamp == other.time_stamp && status == other.status);
+        return (trainID == other.trainID && time_stamp == other.time_stamp);
     }
 };
 
@@ -57,6 +57,7 @@ public:
     int arrive_index;
     int num;
     int time_stamp;
+    int date;
 public:
     bool operator < (const Waitlist & other) const {
         if(username != other.username) return (username < other.username);
@@ -79,6 +80,7 @@ public:
     std::pair<bool, std::vector<Order>> query_order(const std::string &u);
     bool refund_ticket(std::string & u, int n);
     void print_order(const Order & order);
+    void judge_compensate(Waitlist & wait, seat_data & data_in, mystring& trainID_in);
 };
 
 #endif //TICKET_TICKETSYSTEM_H
