@@ -116,18 +116,18 @@ struct BPlusNode{
     int last_pos = -1; //上一个Node在文件中的位置
 };
 
-template<typename keytype, typename valuetype>
-class memory_river{
-public:
-    std::list<BPlusNode<keytype, valuetype>> mylist;
-    class Compare1 {
-    public:
-        bool operator () (const int &lhs, const int &rhs) const {
-            return lhs < rhs;
-        }
-    };
-    sjtu::map<int, typename std::list<BPlusNode<keytype, valuetype>>::iterator, Compare1> mymap;
-};
+// template<typename keytype, typename valuetype>
+// class memory_river{
+// public:
+//     std::list<BPlusNode<keytype, valuetype>> mylist;
+//     class Compare1 {
+//     public:
+//         bool operator () (const int &lhs, const int &rhs) const {
+//             return lhs < rhs;
+//         }
+//     };
+//     sjtu::map<int, typename std::list<BPlusNode<keytype, valuetype>>::iterator, Compare1> mymap;
+// };
 
 template<typename keytype, typename valuetype>
 class BPlusTree{
@@ -140,7 +140,7 @@ public:
     int num;            //表示整个树里面有多少个数据
     int file_tail;      //存放Nfile文件的末尾位置
     Mynode<keytype, valuetype> tmp;
-    memory_river<keytype, valuetype> mycache;
+    // memory_river<keytype, valuetype> mycache;
 
 public:
     BPlusTree() = default;

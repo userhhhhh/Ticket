@@ -38,7 +38,7 @@ void hhh(){
     ofs.close();
 }
 int main(){
-//     freopen("/home/hqs123/class_code/tmp-hw/data/43.in","r",stdin);
+//     freopen("/home/hqs123/class_code/tmp-hw/data/1.in","r",stdin);
 //     freopen("0.out","w",stdout);
     std::ios::sync_with_stdio(false);
     // Usersystem usersystem("data.txt", "infor.txt");

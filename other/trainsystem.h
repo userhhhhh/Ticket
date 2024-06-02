@@ -49,13 +49,13 @@ public:
 
 struct train_data{
     int stationNum;
-    mystring station_name[101];
-    int stations[101] = {};//维护哈希值
-    int prices[101] = {};  //维护前缀和,0_base
-    int stopoverTimes[101] = {};
-    int travelTimes[101] = {};
-    time_data arrive_time[101];
-    time_data leave_time[101];
+    mystring station_name[50];
+    int stations[50] = {};//维护哈希值
+    int prices[50] = {};  //维护前缀和,0_base
+    int stopoverTimes[50] = {};
+    int travelTimes[50] = {};
+    time_data arrive_time[50];
+    time_data leave_time[50];
 };
 
 class seat_data{
@@ -72,8 +72,8 @@ public:
 class Seat{
 public:
     int station_num;
-    int price[101];      //price的前缀和
-    int stations[101];   //哈希值
+    int price[50];      //price的前缀和
+    int stations[50];   //哈希值
     seat_data data[101]; //index为日期转化成的int，value为存放的数值
 public:
     Seat(int seatnum_in, int stationnum_in){
@@ -86,7 +86,7 @@ public:
 #pragma pack()
 
 struct station_data{
-    int stations[101];
+    int stations[50];
     int num;
 };
 

@@ -39,10 +39,6 @@ BPlusTree<keytype, valuetype>::BPlusTree(std::string name1, std::string name2){
 
 template<typename keytype, typename valuetype>
 BPlusTree<keytype, valuetype>::~BPlusTree(){
-    for(auto it = mycache.mylist.begin(); it != mycache.mylist.end(); ++it){
-         Nfile.seekp((*it).pos);
-         Nfile.write(reinterpret_cast<char*>(&(*it)), sizeof((*it)));
-    }
     if (Nfile.is_open()) Nfile.close();
     if (Ifile.is_open()){
         Ifile.close();
@@ -65,45 +61,45 @@ int BPlusTree<keytype, valuetype>::create(){
 template<typename keytype, typename valuetype>
 void BPlusTree<keytype, valuetype>::writeNode(BPlusNode<keytype, valuetype> &n, int pos_in){
     n.pos = pos_in;
-    if(mycache.mymap.count(pos_in)){
-        mycache.mylist.erase(mycache.mymap[n.pos]);
-        mycache.mylist.push_front(n);
-        mycache.mymap[n.pos] = mycache.mylist.begin();
-        return;
-    }
-    mycache.mylist.push_front(n);
-    mycache.mymap[n.pos] = mycache.mylist.begin();
-    if(mycache.mymap.size() > 200){
-        BPlusNode<keytype, valuetype> the_back = mycache.mylist.back();
-        mycache.mymap.erase(mycache.mymap.find(the_back.pos));
-        Nfile.seekp(the_back.pos);
-        Nfile.write(reinterpret_cast<char*>(&the_back), sizeof(the_back));
-        mycache.mylist.pop_back();
-    }
-    // Nfile.seekp(pos_in);
-    // Nfile.write(reinterpret_cast<char*>(&n), sizeof(n));
+    // if(mycache.mymap.count(pos_in)){
+    //     mycache.mylist.erase(mycache.mymap[n.pos]);
+    //     mycache.mylist.push_front(n);
+    //     mycache.mymap[n.pos] = mycache.mylist.begin();
+    //     return;
+    // }
+    // mycache.mylist.push_front(n);
+    // mycache.mymap[n.pos] = mycache.mylist.begin();
+    // if(mycache.mymap.size() > 200){
+    //     BPlusNode<keytype, valuetype> the_back = mycache.mylist.back();
+    //     mycache.mymap.erase(mycache.mymap.find(the_back.pos));
+    //     Nfile.seekp(the_back.pos);
+    //     Nfile.write(reinterpret_cast<char*>(&the_back), sizeof(the_back));
+    //     mycache.mylist.pop_back();
+    // }
+    Nfile.seekp(pos_in);
+    Nfile.write(reinterpret_cast<char*>(&n), sizeof(n));
 }
 
 template<typename keytype, typename valuetype>
 void BPlusTree<keytype, valuetype>::readNode(BPlusNode<keytype, valuetype> &n, int pos_in){
-    if(mycache.mymap.count(pos_in)){
-        n = *(mycache.mymap[pos_in]);
-        mycache.mylist.erase(mycache.mymap[pos_in]);
-        mycache.mylist.push_front(n);
-        mycache.mymap[pos_in] = mycache.mylist.begin();
-        return;
-    }
+    // if(mycache.mymap.count(pos_in)){
+    //     n = *(mycache.mymap[pos_in]);
+    //     mycache.mylist.erase(mycache.mymap[pos_in]);
+    //     mycache.mylist.push_front(n);
+    //     mycache.mymap[pos_in] = mycache.mylist.begin();
+    //     return;
+    // }
     Nfile.seekg(pos_in);
     Nfile.read(reinterpret_cast<char*>(&n), sizeof(n));
-    mycache.mylist.push_front(n);
-    mycache.mymap[pos_in] = mycache.mylist.begin();
-    if(mycache.mymap.size() > 200){
-        BPlusNode<keytype, valuetype> the_back = mycache.mylist.back();
-        mycache.mymap.erase(mycache.mymap.find(the_back.pos));
-        Nfile.seekp(the_back.pos);
-        Nfile.write(reinterpret_cast<char*>(&the_back), sizeof(the_back));
-        mycache.mylist.pop_back();
-    }
+    // mycache.mylist.push_front(n);
+    // mycache.mymap[pos_in] = mycache.mylist.begin();
+    // if(mycache.mymap.size() > 200){
+    //     BPlusNode<keytype, valuetype> the_back = mycache.mylist.back();
+    //     mycache.mymap.erase(mycache.mymap.find(the_back.pos));
+    //     Nfile.seekp(the_back.pos);
+    //     Nfile.write(reinterpret_cast<char*>(&the_back), sizeof(the_back));
+    //     mycache.mylist.pop_back();
+    // }
 }
 
 template<typename keytype, typename valuetype>
