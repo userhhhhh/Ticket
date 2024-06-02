@@ -56,7 +56,7 @@ int main(){
             time_stamp += cmd[i];
             ++i;
         }
-//             if(time_stamp == "6459"){
+//             if(time_stamp == "366616"){
 //                 std::cout << "hhhhh" <<std::endl;
 //             }
         i += 2;
@@ -260,7 +260,7 @@ int main(){
                     i++;
                 }
                 auto the_ans = system.trainsystem.query_transfer(s, t, d, order);
-                if(the_ans.first) std::cout << "0" << std::endl;
+                if(!the_ans.first) std::cout << "0" << std::endl;
                 else{
                     system.trainsystem.print_ticket(the_ans.second.first);
                     std::cout << std::endl;

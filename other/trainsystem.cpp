@@ -276,7 +276,6 @@ void Trainsystem::print_train(std::pair<std::pair<int, TrainInfor>, train_data> 
 }
 
 void Trainsystem::print_ticket(const Ticket &s){
-    Reshape rshp;
     std::cout << s.trainID << " " << s.start_station << " ";
     time_data actual;
     actual.date = s.date;
@@ -386,22 +385,44 @@ void Trainsystem::get_station(TrainStation & t, std::vector<station_data>& v){
 
 void mysort2(std::pair<Ticket, Ticket> & origin, std::pair<Ticket, Ticket> & other, int order){
     time_data origin_actual_end;
-    origin_actual_end.date = origin.second.end_time.date;
-    origin_actual_end.time = origin.second.end_time.time;
-    origin_actual_end = origin_actual_end + origin.second.ticket_start;
+//    origin_actual_end.date = origin.second.end_time.date + origin.second.date;
+//    origin_actual_end.time = origin.second.end_time.time;
+//    origin_actual_end = origin_actual_end + origin.second.ticket_start;
     time_data origin_actual_start;
-    origin_actual_start.date = origin.first.start_time.date;
-    origin_actual_start.time = origin.first.start_time.time;
-    origin_actual_start = origin_actual_start + origin.first.ticket_start;
+//    origin_actual_start.date = origin.first.start_time.date + origin.first.date;
+//    origin_actual_start.time = origin.first.start_time.time;
+//    origin_actual_start = origin_actual_start + origin.first.ticket_start;
 
     time_data other_actual_end;
-    other_actual_end.date = other.second.end_time.date;
-    other_actual_end.time = other.second.end_time.time;
-    other_actual_end = other_actual_end + other.second.ticket_start;
+//    other_actual_end.date = other.second.end_time.date + other.second.date;
+//    other_actual_end.time = other.second.end_time.time;
+//    other_actual_end = other_actual_end + other.second.ticket_start;
     time_data other_actual_start;
-    other_actual_start.date = other.first.start_time.date;
-    other_actual_start.time = other.first.start_time.time;
-    other_actual_start = other_actual_start + other.first.ticket_start;
+//    other_actual_start.date = other.first.start_time.date + other.first.date;
+//    other_actual_start.time = other.first.start_time.time;
+//    other_actual_start = other_actual_start + other.first.ticket_start;
+
+
+    time_data origin_actual1;
+    origin_actual1.date = origin.first.date;
+    origin_actual1.time = origin.first.ticket_start;
+    origin_actual_start = origin_actual1 + origin.first.start_time;
+
+    time_data origin_actual2;
+    origin_actual2.date = origin.second.date;
+    origin_actual2.time = origin.second.ticket_start;
+    origin_actual_end = origin_actual2 + origin.second.end_time;
+
+    time_data other_actual1;
+    other_actual1.date = other.first.date;
+    other_actual1.time = other.first.ticket_start;
+    other_actual_start = other_actual1 + other.first.start_time;
+
+    time_data other_actual2;
+    other_actual2.date = other.second.date;
+    other_actual2.time = other.second.ticket_start;
+    other_actual_end = other_actual2 + other.second.end_time;
+
 
     int original_time = origin_actual_end - origin_actual_start;
     int original_cost = origin.first.cost + origin.second.cost;
@@ -466,7 +487,7 @@ std::pair<bool, std::pair<Ticket, Ticket>> Trainsystem::check(int date_in1, int 
                 }
                 else{
                     target_date_min = date_in1 + mid_arrive_time.date - mid_leave_time.date;
-                    target_date_min--;
+                    target_date_min++;
                 }
                 if(target_date_min > train_arrive_infor.saleDate_end) continue;
                 if(target_date_min >= train_arrive_infor.saleDate_start) target_date = target_date_min;
@@ -509,6 +530,7 @@ std::pair<bool, std::pair<Ticket, Ticket>> Trainsystem::query_transfer(std::stri
     int my_t = hash_string(t);
     int date = command.myprocess(d);
     std::pair<Ticket, Ticket> final_ans;
+    bool flag = false;
     // ans1 和 ans2 是经过这个 station 的 train
     // v1 和 v2 分别存储了每个 train 的所有 station 信息
     auto ans1 = station_train_map.final_find(my_s);
@@ -528,6 +550,7 @@ std::pair<bool, std::pair<Ticket, Ticket>> Trainsystem::query_transfer(std::stri
         read_seat_data(seat_data_leave, ans1[i].seat_pos, tmp_date1);
 
         for(int j = 0; j < ans2.size(); ++j){
+            if(ans1[i].trainID == ans2[j].trainID) continue;
             train_data train_data_arrive;
             auto pair_get2 = train_map.find_node(train_map.root, ans2[j].trainID);
             auto & train_arrive_infor = pair_get2.first.key[pair_get2.second].second;
@@ -540,9 +563,15 @@ std::pair<bool, std::pair<Ticket, Ticket>> Trainsystem::query_transfer(std::stri
             // read_seat_data(seat_data_arrive, ans2[j].seat_pos, tmp_date2);
 
             auto ans = check(tmp_date1, ans1[i].index, ans2[j].index, train_leave_infor, train_data_leave, seat_data_leave,train_arrive_infor, train_data_arrive, order);
-            mysort2(final_ans, ans.second, order);
+            if(flag == false && ans.first){
+                final_ans = ans.second;
+                flag = true;
+            }
+            else if(flag == true && ans.first) mysort2(final_ans, ans.second, order);
+            else {}
         }
     }
+    if(flag == false) return {false, final_ans};
     return {true, final_ans};
 }
 
