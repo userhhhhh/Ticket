@@ -41,6 +41,8 @@ int main(){
 //     freopen("/home/hqs123/class_code/tmp-hw/data/1.in","r",stdin);
 //     freopen("0.out","w",stdout);
     std::ios::sync_with_stdio(false);
+	std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
     // Usersystem usersystem("data.txt", "infor.txt");
 
 //     hhh();
