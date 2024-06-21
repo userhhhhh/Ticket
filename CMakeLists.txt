@@ -3,10 +3,14 @@ project(Ticket)
 
 set(CMAKE_CXX_STANDARD 14)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
+
+
 include_directories(.)
 include_directories(B_plus_tree)
 include_directories(other)
 include_directories(map)
+
 
 #set(CMAKE_RUNTIME_OUTPUTDIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
